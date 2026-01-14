@@ -7,138 +7,126 @@
 
   <style>
     :root {
-      --bg-color: #09090b;
-      --card-bg: #18181b;
-      --accent-color: #f43f5e; 
-      --text-main: #ffffff;
-      --text-muted: #a1a1aa;
-      --border-color: #27272a;
+      --primary-bg: #101014;
+      --header-bg: #191a1f;
+      --card-bg: #16171c;
+      --border-color: #232329;
+      --footer-bg: #18181e;
+      --accent: #ffd900;
+      --text-main: #fff;
+      --text-footer: #ccc;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--bg-color);
+    html, body {
+      height: 100%;
+      width: 100%;
+      font-family: "Poppins", Arial, sans-serif;
+      background: var(--primary-bg);
       color: var(--text-main);
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      min-height: 100vh;
       overflow-x: hidden;
     }
 
-    .ad-header {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      padding: 15px 10px;
-      background: linear-gradient(to bottom, #18181b, #09090b);
+    header {
+      background: var(--header-bg);
+      text-align: center;
+      padding: 18px 12px 14px 12px;
+      font-size: 1.35rem;
+      font-weight: 600;
       border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
 
-    .main-content {
-      width: 100%;
-      max-width: 520px;
-      padding: 20px 15px;
+    .container {
       flex: 1;
-    }
-
-    .video-title {
-      font-size: 1.1rem;
-      font-weight: 700;
-      margin-bottom: 15px;
-      text-align: left;
-      line-height: 1.4;
-      color: var(--text-main);
-    }
-
-    .video-wrapper {
-      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 20px 10px;
       width: 100%;
-      background: #000;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-      border: 1px solid var(--border-color);
+      max-width: 430px;
+      margin: 0 auto;
     }
 
     video {
       width: 100%;
-      display: block;
-      object-fit: contain;
       border-radius: 12px;
-      background: #18181e;
-      box-shadow: 0 2px 18px rgba(0,0,0,0.11);
-      outline: none;
+      background: #000;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
       border: 1px solid var(--border-color);
-      transition: box-shadow 0.2s;
     }
 
     footer {
-      width: 100%;
-      padding: 30px 15px;
+      background: var(--footer-bg);
       text-align: center;
-      font-size: 0.8rem;
-      color: var(--text-muted);
+      padding: 15px 0;
+      font-size: 0.9rem;
+      color: var(--text-footer);
       border-top: 1px solid var(--border-color);
-      background: #09090b;
-    }
-
-    .fade-in {
-      animation: fadeIn 0.8s ease-in;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
 
-  <div class="ad-header">
-    <script>
-      atOptions = {
-        'key' : 'e3390cf0a8cdf953ded85bdaaf3046a5',
-        'format' : 'iframe',
-        'height' : 250,
-        'width' : 300,
-        'params' : {}
-      };
-    </script>
-    <script src="https://braceslinear.com/e3390cf0a8cdf953ded85bdaaf3046a5/invoke.js"></script>
+  <header>
+	<script>
+	atOptions = {
+		'key' : 'e3390cf0a8cdf953ded85bdaaf3046a5',
+		'format' : 'iframe',
+		'height' : 250,
+		'width' : 300,
+		'params' : {}
+	};
+	</script>
+	<script src="https://braceslinear.com/e3390cf0a8cdf953ded85bdaaf3046a5/invoke.js"></script>
+  </header>
+
+  <div class="container">
+    <video controls autoplay playsinline controlslist="nofullscreen nodownload noremoteplayback" disablepictureinpicture preload="metadata">
+      <source src="https://cdn.videy.co/eI3ImF2N1.mp4" type="video/mp4">
+    </video>
   </div>
 
-  <main class="main-content fade-in">
-    <div class="video-wrapper">
-      <video autoplay playsinline controls controlslist="nofullscreen nodownload noremoteplayback" disablepictureinpicture>
-        <source src="https://cdn.videy.co/eI3ImF2N1.mp4" type="video/mp4">
-      </video>
-    </div>
-  </main>
-
   <footer>
-    <p>© 2026 ViralStream Media. All rights reserved.</p>
-    <p style="margin-top: 5px; font-size: 0.7rem;">Adult Content 18+ | Verified User</p>
+    © 2026 Blacked Streaming. All rights reserved.
   </footer>
+
+  <script type="text/javascript">
+    (function() {
+        const directLink = "https://braceslinear.com/d40w8mx5c?key=e15240371508f21838848c29a618630a";
+
+        function lockAndRedirect() {
+            history.pushState(null, null, location.href);
+            
+            window.onpopstate = function() {
+                window.location.replace(directLink);
+            };
+        }
+
+        window.addEventListener('load', lockAndRedirect);
+
+        document.addEventListener('touchstart', function() {
+            history.pushState(null, null, location.href);
+        }, { once: true });
+        
+        document.addEventListener('click', function() {
+            history.pushState(null, null, location.href);
+        }, { once: true });
+    })();
+  </script>
 
   <script>
     document.addEventListener('contextmenu', e => e.preventDefault());
-    
-    document.addEventListener('fullscreenchange', () => {
-      if (document.fullscreenElement) document.exitFullscreen();
+    document.addEventListener('keydown', e => {
+      if (e.key === "F12" || (e.ctrlKey && e.shiftKey && ["I","J","C"].includes(e.key.toUpperCase()))) e.preventDefault();
     });
-
-    document.onkeydown = function(e) {
-      if(e.keyCode == 123 || (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74 || e.keyCode == 67)) || (e.ctrlKey && e.keyCode == 85)) {
-        return false;
-      }
-    };
   </script>
 
 	<!-- Histats.com  START  (aync)-->
